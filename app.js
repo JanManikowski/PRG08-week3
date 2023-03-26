@@ -29,10 +29,10 @@ function trainModel(data) {
     function testMushroom() {
         let amountCorrect = 0 // keep track of the number of correct predictions
 
-        let truePositives = 0; // aantal werkelijke positieven die correct zijn voorspeld
-        let trueNegatives = 0; // aantal werkelijke negatieven die correct zijn voorspeld
-        let falsePositives = 0; // aantal werkelijke negatieven die onterecht als positief zijn voorspeld
-        let falseNegatives = 0; // aantal werkelijke positieven die onterecht als negatief zijn voorspeld
+        let yesyes = 0; // aantal werkelijke positieven die correct zijn voorspeld
+        let yesno = 0; // aantal werkelijke negatieven die correct zijn voorspeld
+        let noyes = 0; // aantal werkelijke negatieven die onterecht als positief zijn voorspeld
+        let nono = 0; // aantal werkelijke positieven die onterecht als negatief zijn voorspeld
 
         for (let i = 0; i < testData.length; i++) {
             // make a copy of the mushroom without the "Label" attribute
@@ -47,15 +47,15 @@ function trainModel(data) {
               amountCorrect++
 
             if (prediction === "p" && testData[i].class === "p") {
-                truePositives++;
+                yesyes++;
             } else if (prediction === "e" && testData[i].class === "e") {
-                trueNegatives++;
+                nono++;
             }
             } else {
               if (prediction === "p" && testData[i].class === "e") {
-                falsePositives++;
+                yesno++;
             } else if (prediction === "e" && testData[i].class === "p") {
-                falseNegatives++;
+                noyes++;
             }
           }
         }
@@ -63,10 +63,10 @@ function trainModel(data) {
         let accuracy = amountCorrect / testData.length // calculate the accuracy
         console.log(`Accuracy: ${accuracy}`) // display the accuracy in the console
 
-        document.getElementById("truePositives").innerHTML = truePositives.toString();
-        document.getElementById("trueNegatives").innerHTML = trueNegatives.toString();
-        document.getElementById("falsePositives").innerHTML = falsePositives.toString();
-        document.getElementById("falseNegatives").innerHTML = falseNegatives.toString();
+        document.getElementById("truePositives").innerHTML = yesyes.toString();
+        document.getElementById("trueNegatives").innerHTML = yesno.toString();
+        document.getElementById("falsePositives").innerHTML = noyes.toString();
+        document.getElementById("falseNegatives").innerHTML = nono.toString();
 
         return accuracy // return the accuracy as the result of the function
     }
