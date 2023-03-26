@@ -29,10 +29,10 @@ function trainModel(data) {
     function testMushroom() {
         let amountCorrect = 0 // keep track of the number of correct predictions
 
-        let yesyes = 0; // aantal werkelijke positieven die correct zijn voorspeld
-        let yesno = 0; // aantal werkelijke negatieven die correct zijn voorspeld
-        let noyes = 0; // aantal werkelijke negatieven die onterecht als positief zijn voorspeld
-        let nono = 0; // aantal werkelijke positieven die onterecht als negatief zijn voorspeld
+        let yesyes = 0; // Positief voorspeld -> Positief
+        let yesno = 0; // Positief voorspeld -> Negatief
+        let noyes = 0; // Negatief voorspeld -> Positief
+        let nono = 0; // Negatief voorspeld -> Negatief
 
         for (let i = 0; i < testData.length; i++) {
             // make a copy of the mushroom without the "Label" attribute
