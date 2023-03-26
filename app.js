@@ -46,20 +46,20 @@ function trainModel(data) {
 
             // compare the prediction with the actual label
             if (prediction === testData[i].class) {
-                amountCorrect++
+              amountCorrect++
 
-                if (prediction === "p") {
-                    truePositives++;
-                  } else {
-                    trueNegatives++;
-                  }
-                } else {
-                  if (prediction === "p") {
-                    falsePositives++;
-                  } else {
-                    falseNegatives++;
-                  }
+            if (prediction === "p" && testData[i].class === "p") {
+                truePositives++;
+            } else if (prediction === "e" && testData[i].class === "e") {
+                trueNegatives++;
             }
+            } else {
+              if (prediction === "p" && testData[i].class === "e") {
+                falsePositives++;
+            } else if (prediction === "e" && testData[i].class === "p") {
+                falseNegatives++;
+            }
+          }
         }
 
         let accuracy = amountCorrect / testData.length // calculate the accuracy
