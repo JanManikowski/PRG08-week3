@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script defer src="json.js" type="module"></script>
+    <link rel="stylesheet" href="jsonstyle.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <h1> Is The Mushroom Poisionous? </h1>
+        Do you want to know if the mushroom you see if poisionous or edible? <br>
+        Fill in the questions to find out (If the prediction is incorrect and you eat the mushroom and you get sick or die we take no responsability for the consequences)
+    </div>
+
+    <div id="div2">
+        <form id="mushroomForm">
+            <label for="bruises">Does the mushroom have bruises?</label>
+            <select id="bruises">
+            <option value="t">Yes</option>
+            <option value="f">No</option>
+            </select>
+            
+            <label for="odor">What does the mushroom smell like?</label>
+            <select id="odor">
+            <option value="n">None</option>
+            <option value="p">Pungent</option>
+            <option value="a">Almond</option>
+            <option value="l">Anise</option>
+            <option value="c">Creosote</option>
+            <option value="f">Foul</option>
+            <option value="m">Musty</option>
+            <option value="y">Fishy</option>
+            <option value="s">Spicy</option>
+            </select>
+        
+            <label for="population">What is the population of the mushroom?</label>
+            <select id="population">
+                <option value="c">Clustered</option>
+                <option value="n">Numerous</option>
+                <option value="s">Scattered</option>
+                <option value="v">Several</option>
+                <option value="a">Abundant</option>
+                <option value="y">Solitary</option>
+            </select>
+
+            <label for="habitat">What is the habitat of the mushroom?</label>
+            <select id="habitat">
+                <option value="g">Grasses</option>
+                <option value="m">Meadows</option>
+                <option value="d">Woods</option>
+                <option value="w">Waste</option>
+                <option value="p">Paths</option>
+                <option value="l">Leaves</option>
+                <option value="u">Urban</option>
+            </select>
+        
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+
+    <div id="div3">
+        <p id="predictionResult"></p>
+    </div>
+
+    <div id="goBack">
+        <h1><a href="index.html">Go Back</a></h1>
+    </div>
+      
+</body>
+</html>
